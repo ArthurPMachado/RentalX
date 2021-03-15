@@ -1,7 +1,9 @@
-import express from 'express';
+import express from "express";
 
 const server = express();
 
-server.get('/', (request, response) => response.json({ message: 'Hello World' }));
+server.get("/", (request, response) =>
+  response.json({ message: "Hello World" })
+);
 
 server.listen(3030);
