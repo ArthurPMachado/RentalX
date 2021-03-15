@@ -6,4 +6,4 @@ server.get("/", (request, response) =>
   response.json({ message: "Hello World" })
 );
 
-server.listen(3030);
+server.listen(3030, () => "Server is running");
