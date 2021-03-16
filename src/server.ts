@@ -1,9 +1,11 @@
 import express from "express";
 
+import categoriesRoutes from "./routes/categories.routes";
+
 const server = express();
 
-server.get("/", (request, response) =>
-  response.json({ message: "Hello World Ignite" })
-);
+server.use(express.json());
+
+server.use(categoriesRoutes);
 
 server.listen(3030, () => console.log("Server is running"));
