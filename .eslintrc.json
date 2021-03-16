@@ -1,78 +1,99 @@
 {
-	"env": {
-		"es2021": true,
-		"node": true,
+  "env": {
+    "es2021": true,
+    "node": true,
     "jest": true
-	},
-	"extends": [
-		"airbnb-base",
+  },
+  "extends": [
+    "airbnb-base",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended"
-	],
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaVersion": 12,
-		"sourceType": "module"
-	},
-	"plugins": [
-		"@typescript-eslint",
-		"eslint-plugin-import-helpers",
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers",
     "prettier"
-	],
-	"rules": {
+  ],
+  "rules": {
     "prettier/prettier": "error",
-		"linebreak-style":"warn",
-		"arrow-parens": "warn",
-		"object-curly-newline": "warn",
-		"no-unused-vars": "warn",
-		"radix": "warn",
-		"max-len": "warn",
-		"comma-dangle": "off",
-		"camelcase": "off",
+    "linebreak-style": "warn",
+    "arrow-parens": "warn",
+    "object-curly-newline": "warn",
+    "no-unused-vars": "warn",
+    "radix": "warn",
+    "max-len": "warn",
+    "no-useless-constructor": "off",
+    "comma-dangle": "off",
+    "camelcase": "off",
     "class-methods-use-this": "off",
     "no-console": "off",
     "no-shadow": "off",
-		"import/prefer-default-export": "off",
+    "import/prefer-default-export": "off",
     "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-          "ts": "never"
-        }
-      ],
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ],
     "import-helpers/order-imports": [
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        "groups": [
+          "module",
+          "/^@shared/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
       }
     ],
     "import/no-extraneous-dependencies": [
-        "error",
-        { "devDependencies": ["**/*.spec.js"] }
+      "error",
+      {
+        "devDependencies": [
+          "**/*.spec.js"
+        ]
+      }
     ],
-		"@typescript-eslint/explicit-function-return-type": "off",
-		"@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
         "selector": "interface",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^I[A-Z]",
           "match": true
         }
       }
     ]
-	},
-	"settings": {
-		"import/parsers": {
-			"@typescript-eslint/parser": [".ts", ".tsx"]
-		},
-		"import/resolver": {
-			"typescript": {}
-		}
-	}
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 }
