@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "orm": "ts-node-dev ./node_modules/typeorm/cli",
-    "docker:migration-run": "docker exec rentalx yarn orm migration:run"
+    "docker:migration-run": "docker exec rentalx yarn orm migration:run",
+    "docker:migration-revert": "docker exec rentalx yarn orm migration:revert"
   },
   "dependencies": {
     "csv-parse": "^4.15.3",
