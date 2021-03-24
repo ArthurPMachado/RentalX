@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "orm": "ts-node-dev ./node_modules/typeorm/cli"
+    "orm": "ts-node-dev ./node_modules/typeorm/cli",
+    "docker:migration-run": "docker exec rentalx yarn orm migration:run"
   },
   "dependencies": {
     "csv-parse": "^4.15.3",

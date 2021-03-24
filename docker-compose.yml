@@ -17,11 +17,11 @@ services:
   app:
     build: .
     container_name: rentalx
+    restart: always
     ports: 
       - 3030:3030
     volumes:
       - .:/usr/app
-    
 
 volumes: 
   pgdata:
