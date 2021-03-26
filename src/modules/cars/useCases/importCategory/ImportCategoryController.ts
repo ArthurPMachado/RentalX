@@ -6,12 +6,12 @@ import ImportCategoryUseCase from "./ImportCategoryUseCase";
 
 class ImportCategoryController {
 
-  handle(request: Request, response: Response): Response {
+  async handle(request: Request, response: Response): Promise<Response> {
     const { file } = request;
 
     const importCategoryUseCase = container.resolve(ImportCategoryUseCase);
 
-    importCategoryUseCase.execute(file);
+    await importCategoryUseCase.execute(file);
 
     return response.send();
   }
