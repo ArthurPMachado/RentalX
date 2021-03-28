@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import {
+  Column, CreateDateColumn, Entity, PrimaryColumn
+} from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 @Entity("users")
@@ -8,9 +10,6 @@ class User {
 
   @Column()
   name: string;
-
-  @Column()
-  username: string;
 
   @Column()
   email: string;
