@@ -4,7 +4,6 @@ services:
   database: 
     image: postgres
     container_name: database
-    restart: always
     ports:
       - 5432:5432
     environment: 
@@ -13,11 +12,11 @@ services:
       - POSTGRES_DB=rentalx
     volumes:
       - pgdata:/data/postgres
+    restart: always
 
   app:
     build: .
     container_name: rentalx
-    restart: always
     ports: 
       - 3030:3030
     volumes:
@@ -26,6 +25,7 @@ services:
       - database
     depends_on: 
       - database
+    restart: always
 
 volumes: 
   pgdata:
