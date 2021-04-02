@@ -1,4 +1,4 @@
-import Category from "../../models/Category";
+import Category from "../../infra/typeorm/models/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
