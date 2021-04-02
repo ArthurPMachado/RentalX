@@ -6,8 +6,8 @@
   "author": "Arthur Pereira Machado <machadoparthur1@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "orm": "ts-node-dev ./node_modules/typeorm/cli",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "orm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "docker:migration-run": "docker exec rentalx yarn orm migration:run",
     "docker:migration-revert": "docker exec rentalx yarn orm migration:revert",
     "test": "jest"
