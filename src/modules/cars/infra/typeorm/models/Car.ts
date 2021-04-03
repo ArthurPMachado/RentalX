@@ -28,7 +28,7 @@ class Car {
   license_plate: string;
 
   @Column()
-  available = true;
+  available: boolean;
 
   @Column()
   fine_amount: number;
@@ -49,6 +49,7 @@ class Car {
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
+      this.available = true;
     }
   }
 }
