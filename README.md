@@ -34,8 +34,6 @@ O usuário não precisar estar logado no sistema
 
 ### **RF**
 Deve ser possível cadastrar uma especificação para um carro
-Deve ser possível listar todas as especificações
-Deve ser possível listar todos os carros
 
 
 ### **RN**
