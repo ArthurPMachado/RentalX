@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 3030
 
-CMD ["npm", "run", "devd"]
+CMD ["npm", "run", "dev"]

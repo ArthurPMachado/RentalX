@@ -10,7 +10,7 @@
     "orm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "docker:migration-run": "docker exec rentalx yarn orm migration:run",
     "docker:migration-revert": "docker exec rentalx yarn orm migration:revert",
-    "test": "set NODE_ENV=test&&jest",
+    "test": "set NODE_ENV=test&&jest -i",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
