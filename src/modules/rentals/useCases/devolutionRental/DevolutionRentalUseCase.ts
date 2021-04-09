@@ -27,7 +27,7 @@ class DevolutionRentalUseCase {
     const minimum_daily = 1;
 
     const rental = await this.rentalsRepository.findById(id);
-    const car = await this.carsRepository.findById(id);
+    const car = await this.carsRepository.findById(rental.car_id);
 
     if (!rental) {
       throw new AppError("Rental does not exists!");
@@ -45,8 +45,8 @@ class DevolutionRentalUseCase {
     }
 
     const delay = this.dateProvider.compareInDays(
+      rental.expected_return_date,
       dateNow,
-      rental.expected_return_date
     )
 
     let total = 0
@@ -56,7 +56,7 @@ class DevolutionRentalUseCase {
       total = calculate_fine;
     }
 
-    total += daily + car.daily_rate;
+    total += daily + Number(car.daily_rate);
 
     rental.end_date = this.dateProvider.dateNow();
     rental.total = total;
