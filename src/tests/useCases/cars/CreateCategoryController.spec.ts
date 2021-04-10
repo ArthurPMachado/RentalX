@@ -56,8 +56,8 @@ describe("Create Category Controller", () => {
     const response = await request(server)
       .post("/categories")
       .send({
-        name: "Category supertest",
-        description: "Category supertest",
+        name: "Category test",
+        description: "Category test",
       })
       .set({
         Authorization: `Bearer ${token}`,
