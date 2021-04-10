@@ -21,6 +21,23 @@ describe("Create Category Controller", () => {
         VALUES('${id}', 'admin', 'admin@rentalx.com.br', '${password}', true, 'now()', 'XXXXXX')
       `
     );
+
+    const responseToken = await request(server).post("/sessions").send({
+      email: "admin@rentalx.com.br",
+      password: "admin",
+    });
+
+    const { token } = responseToken.body;
+
+    await request(server)
+      .post("/categories")
+      .send({
+        name: "Category supertest",
+        description: "Category supertest",
+      })
+      .set({
+        Authorization: `Bearer ${token}`,
+      });
   });
 
   afterAll(async () => {
@@ -56,6 +73,16 @@ describe("Create Category Controller", () => {
     });
 
     const { token } = responseToken.body;
+
+    await request(server)
+      .post("/categories")
+      .send({
+        name: "Category supertest",
+        description: "Category supertest",
+      })
+      .set({
+        Authorization: `Bearer ${token}`,
+      });
 
     const response = await request(server)
       .post("/categories")
