@@ -1,5 +1,3 @@
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable import/no-named-as-default-member */
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 
