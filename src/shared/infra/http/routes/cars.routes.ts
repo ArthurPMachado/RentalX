@@ -12,7 +12,7 @@ import ensureAuthenticated from "../middlewares/ensureAuthenticated";
 
 const carsRoutes = Router();
 
-const uploadCarImage = multer(uploadConfig.upload("./tmp/cars"));
+const uploadCarImage = multer(uploadConfig);
 
 const createCarController = new CreateCarController();
 const listAvailableCarsController = new ListAvailableCarsController();
