@@ -6,6 +6,7 @@ import swaggerUi from "swagger-ui-express";
 
 import "../../container";
 
+import upload from "@config/upload";
 import AppError from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
@@ -18,6 +19,8 @@ const server = express();
 server.use(express.json());
 
 server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+server.use("/avatar", express.static(`${upload.tmpFolder}/avatar`));
+server.use("/cars", express.static(`${upload.tmpFolder}/cars`));
 
 server.use(router);
 
