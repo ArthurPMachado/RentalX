@@ -104,4 +104,10 @@ dist
 .tern-port
 
 .vscode
-tmp
+
+# tmp folder
+tmp/*
+!tmp/.gitkeep
+
+/ormconfig.json
+
