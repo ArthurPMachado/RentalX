@@ -12,10 +12,13 @@ import AppError from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
 import createConnection from "../typeorm/database";
+import rateLimiter from "./middlewares/rateLimiter";
 import router from "./routes";
 
 createConnection();
 const server = express();
+
+server.use(rateLimiter);
 
 server.use(express.json());
 
