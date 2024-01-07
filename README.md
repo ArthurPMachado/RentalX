@@ -26,6 +26,7 @@ To run this project, it's necessary to prepare your environment, which means:
 
 1. Install NodeJS 16+ - https://nodejs.org/en
 2. Download and install Docker - https://www.docker.com/products/docker-desktop/
+3. To use all the features, it's necessary to have a AWS account, otherwise the storage and email-sending will not be possible - https://aws.amazon.com/
 
 ### Installing
 **Cloning the Repository**
