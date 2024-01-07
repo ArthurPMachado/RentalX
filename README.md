@@ -1,108 +1,65 @@
-# RentalX
-Repositório para explorar a criação de uma API em node, com princípos do SOLID e documentação com o Swagger
+# Car Rental App
 
+## A Node app to rental cars and with their images
 
+The idea behind the project is for users to rental cars, for that the users can 
+register the cars available with photos of them.
 
-# Requisitos da Aplicação
+It's also a part of my personal portfolio, which I use to explore SOLID principles, API documentation, mail sending and attachments upload, which for them is used, respectively, SES and S3, both services from AWS
 
-## Cadastro de Carro
+## Technologies used
 
-### **RF**
-Deve ser possível cadastrar um carro novo
+* NodeJS
+* AWS
+* TypeORM
+* Docker
+* Redis
+* PostgreSQL
+* JWT
+* Jest
+* Swagger
 
+## Getting Started
+### Prerequisites
 
-### **RN**
-Não deve ser possível cadastrar um carro com uma placa já existente
-O carro deve ser cadastrado, por padrão, com disponibilidade
-* O usuário responsável pelo cadastro deve ser um usuário administrador
+To run this project, it's necessary to prepare your environment, which means:
 
+1. Install NodeJS 16+ - https://nodejs.org/en
+2. Download and install Docker - https://www.docker.com/products/docker-desktop/
 
-## Listagem de Carros
+### Installing
+**Cloning the Repository**
+```
+$ git clone https://github.com/ArthurPMachado/RentalX.git
 
-### **RF**
-Deve ser possível listar todos os carros disponíveis 
-Deve ser possível listar todos os carros disponíveis pelo nome da categoria
-Deve ser possível listar todos os carros disponíveis pelo nome da marca
-Deve ser possível listar todos os carros disponíveis pelo nome do carro
+$ cd RentalX
+```
+**Installing dependencies**
 
+```
+$ yarn i
+```
 
-### **RN**
-O usuário não precisar estar logado no sistema
+### Running Project
 
+```
+$ yarn run dev
+```
 
-## Cadastro de Especificação no carro
+### Running Tests
+**Unit tests**
+```
+$ yarn run test
+```
+⚠️ **DO NOT FORGET TO CREATE A .ENV FILE, OTHERWISE THE PROJECT WILL NOT WORK**
 
-### **RF**
-Deve ser possível cadastrar uma especificação para um carro
+# Author
 
+👤 **Arthur Machado**
 
-### **RN**
-Não deve possível cadastrar uma especificação para um carro não cadastrado
-Não deve possível cadastrar uma especificação já existente para o mesmo carro
-O usuário responsável pelo cadastro deve ser um usuário administrador
+- Github: [@Arthur Machado](https://github.com/ArthurPMachado)
+- LinkedIn: [@Arthur Machado](https://linkedin.com/in/arthurpmachado)
 
+## Show your support
 
-## Cadastro de imagens no carro
-
-### **RF**
-Deve ser possível cadastrar a imagem do carro
-
-
-### **RNF**
-Utilizar o multer para upload de arquivos
-
-
-### **RN**
-O usuário deve poder cadastrar mais de uma imagem para o mesmo carro
-O usuário responsável pelo cadastro deve ser um usuário administrador
-
-
-## Aluguel de Carro
-
-### **RF**
-Deve ser possível cadastrar um aluguel
-
-
-### **RN**
-O aluguel deve ter duração minima de 24 horas
-Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário
-Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro
-O usuário deve estar logado na aplicação
-Ao realizar um aluguel, o status do carro deverá ser alterado para indisponível
-
-
-## Devolução de Carro
-
-### **RF**
-Deve ser possível realizar a devolução de um carro
-
-
-### **RN**
-Se o carro for devolvido com menos de 24 horas, deverá ser cobrado diária completa
-Ao realizar a devolução, o carro deverá ser liberado para outro aluguel
-Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel
-Ao realizar a devolução, deverá ser calculado o total do aluguel
-Caso o horário da devolução seja superior ao horário previsto de entrega, deverá ser cobrado multa proporcional aos dias de atraso
-Caso haja multa, deverá ser somado ao total do aluguel
-O usuário deve estar logado na aplicação
-
-
-## Listagem de Alugueis para usuário
-
-### **RF**
-Deve ser possível realizar a busca de todos os alugueis para o usuário
-
-### **RN**
-O usuário deve estar logado na aplicação
-
-
-## Recuperar Senha
-
-### **RF**
-Deve ser possível o usuário recuperar a senha informando o e-mail
-O usuário deve receber um e-mail com o passo a passo para a recuperação da senha
-O usuário deve conseguir inserir uma nova senha
-
-## **RN**
-O usuário precisa informar uma nova senha
-O link enviado para a recuperação de senha deve expirar em 3 horas
+Give a ⭐️ if this project helped you!
